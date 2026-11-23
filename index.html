@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Portfolio de Samah Maamri. Deep learning, imagerie médicale et segmentation.">
+<title>Samah Maamri — Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<script src="brain.js" defer></script>
+</head>
+<body>
+<header class="header">
+  <a class="brand" href="#accueil">SAMAH<span>.</span></a>
+  <nav aria-label="Navigation principale"><a href="#profil">Parcours</a><a href="#recherche">Recherche</a><a href="#projets">Projets</a><a href="#anevrismes">Anévrismes</a></nav>
+</header>
+<main>
+  <section class="hero" id="accueil" aria-labelledby="titre">
+    <div class="intro">
+      <p class="eyebrow">Samah Maamri</p>
+      <h1 id="titre">Donner forme<br>aux <em>idées.</em></h1>
+      <p class="lede">Deep learning, imagerie médicale et segmentation.</p>
+    </div>
+    <figure class="visual">
+      <canvas id="brain" role="img" aria-label="Cerveau en trois dimensions composé de particules roses."></canvas>
+    </figure>
+  </section>
+  <section class="section" id="profil">
+    <p class="eyebrow">Parcours</p>
+    <h2>D’Ouargla à Clermont-Ferrand</h2>
+    <div class="profile-layout">
+      <img class="portrait" src="images/samah.webp" width="470" height="470" loading="lazy" decoding="async" alt="Portrait de Samah Maamri">
+    <ol class="entries">
+      <li><span class="meta">2019–2022</span><div><h3>Licence en informatique</h3><p>Université Kasdi Merbah Ouargla, Algérie</p></div></li>
+      <li><span class="meta">2022–2024</span><div><h3>Master en IA et Data Science</h3><p>Université Kasdi Merbah Ouargla, Algérie</p></div></li>
+      <li><span class="meta">2025–2027</span><div><h3>Master en traitement du signal et des images</h3><p>Parcours Imagerie et Technologie pour la Médecine · Université Clermont Auvergne</p></div></li>
+    </ol>
+    </div>
+  </section>
+
+  <section class="section" id="recherche">
+    <p class="eyebrow">Stage de recherche · Avril–août 2026</p>
+    <h2>Segmentation d'IRM cérébrales avec annotations incomplètes</h2>
+    <div class="research-layout">
+      <div>
+        <img class="institute-logo" src="images/institut-pascal.jpg" width="326" height="130" loading="lazy" decoding="async" alt="Logo de l’Institut Pascal">
+        <p class="lede">Institut Pascal · Université Clermont Auvergne</p>
+        <ul class="research-points">
+          <li><strong>Objectif :</strong> exploiter les IRM partiellement annotées pour améliorer la segmentation de 10 structures cérébrales.</li>
+          <li><strong>Méthodologie :</strong> comparaison de 4 stratégies de pseudo-labels fondées sur nnU-Net et de 5 stratégies utilisant le recalage de l'atlas MDBA.</li>
+          <li><strong>Approche :</strong> compléter les annotations manquantes par des pseudo-labels, conserver les annotations expertes et réentraîner nnU-Net avec une fonction de coût pondérée.</li>
+          <li><strong>Évaluation :</strong> Dice, HD95 et similarité volumique sur 15 patients de test.</li>
+          <li><strong>Résultat :</strong> meilleur Dice moyen de <strong class="research-result">0,752 ± 0,069</strong>.</li>
+        </ul>
+      </div>
+      <figure class="project-image"><a href="images/irm-cerebrales.webp" aria-label="Agrandir le visuel — Exemples d’IRM cérébrales avec annotations complètes et partielles."><img src="images/irm-cerebrales.webp" width="372" height="546" loading="lazy" decoding="async" alt="Coupes cérébrales avec des masques colorés, comparant les cas avec annotations complètes et partielles."></a><figcaption>Exemples d’IRM cérébrales avec annotations complètes et partielles.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="section" id="projets">
+    <p class="eyebrow">Projets</p>
+  <h2>Projets de recherche et personnels </h2>  
+    <div class="cards">
+      <section class="card" id="irm-cardiaque">
+        <p class="meta">U-Net · MONAI · Streamlit</p>
+        <h3>Segmentation d’IRM cardiaques</h3>
+        <p>Segmentation automatique d’IRM cardiaques et visualisation des résultats dans une interface Streamlit.</p>
+        <p class="result">Dice de 0,819</p>
+        <figure class="project-image"><a href="images/irm-cardiaque.webp" aria-label="Agrandir le visuel — Comparaison entre le masque de référence et la prédiction du modèle U-Net."><img src="images/irm-cardiaque.webp" width="836" height="224" loading="lazy" decoding="async" alt="IRM cardiaque, masque de référence, masque prédit et superposition des deux masques."></a><figcaption>Comparaison entre le masque de référence et la prédiction du modèle U-Net.</figcaption></figure>
+      </section>
+      <section class="card" id="recommandation">
+        <p class="meta">Graphes de connaissances · GCN</p>
+        <h3>Recommandation de films</h3>
+        <p>Un système qui combine des graphes de connaissances et des réseaux convolutifs de graphes pour recommander des films et expliquer les suggestions.</p>
+        <figure class="project-image"><a href="images/recommandation.webp" aria-label="Agrandir le visuel — Exemple de recommandation expliquée par le système."><img src="images/recommandation.webp" width="866" height="160" loading="lazy" decoding="async" alt="Sortie du système qui recommande Mission Impossible et liste les catégories qui motivent la suggestion."></a><figcaption>Exemple de recommandation expliquée par le système.</figcaption></figure>
+      </section>
+      <section class="card" id="recalage">
+        <p class="meta">Projet en cours · Python, OpenCV, NetworkX</p>
+        <h3>Recalage multimodal XA / OCT</h3>
+        <p>Exploration du recalage en imagerie coronaire à partir de graphes vasculaires. Le travail porte sur la squelettisation, la détection de bifurcations et l’extraction de chemins vasculaires candidats.</p>
+        <div class="image-pair">
+          <figure class="project-image"><a href="images/graphe-vasculaire.webp" aria-label="Agrandir le visuel — Graphe vasculaire"><img src="images/graphe-vasculaire.webp" width="296" height="296" loading="lazy" decoding="async" alt="Branches blanches et roses du réseau vasculaire sur fond noir."></a><figcaption>Graphe vasculaire</figcaption></figure>
+          <figure class="project-image"><a href="images/coupe-oct.webp" aria-label="Agrandir le visuel — Coupe OCT"><img src="images/coupe-oct.webp" width="274" height="284" loading="lazy" decoding="async" alt="Coupe en niveaux de gris avec le contour en jaune."></a><figcaption>Coupe OCT</figcaption></figure>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <section class="section" id="competences">
+    <h2>Compétences</h2>
+    <div class="cards">
+      <article class="card"><h3>Programmation scientifique</h3><p>Python, NumPy, SciPy, OpenCV, scikit-image et NetworkX. Deep learning avec PyTorch, MONAI, U-Net et nnU-Net.</p></article>
+      <article class="card"><h3>Segmentation médicale</h3><p>IRM cérébrales et cardiaques, annotations incomplètes, segmentation multiclasse et pseudo-labels.</p></article>
+      <article class="card"><h3>Analyse et évaluation</h3><p>Prétraitement des images, validation des modèles et évaluation avec Dice, HD95 et VS.</p></article>
+    </div>
+  </section>
+
+  <section class="section" id="certifications">
+    <h2>Certifications</h2>
+    <ul class="entries">
+      <li><span class="meta">2024</span><div><h3>Machine Learning Specialization</h3><p>DeepLearning.AI et Stanford Online · Coursera</p></div></li>
+      <li><span class="meta">2026</span><div><h3>Deep Learning Specialization</h3><p>DeepLearning.AI · Coursera</p></div></li>
+      <li><span class="meta">2026</span><div><h3>AI for Medicine Specialization</h3><p>DeepLearning.AI · Coursera</p></div></li>
+      <li><span class="meta">2022</span><div><h3>Fundamentals of Deep Learning</h3><p>NVIDIA Deep Learning Institute</p></div></li>
+    </ul>
+  </section>
+
+  <section class="section" id="lectures">
+    <p class="eyebrow">Lectures</p>
+    <h2>Les livres qui nourrissent ma curiosité</h2>
+    <ul class="cards readings">
+      <li class="card"><img src="images/storytelling-with-data.webp" width="324" height="394" loading="lazy" decoding="async" alt=""><h3><cite>Storytelling with Data</cite></h3><p>Cole Nussbaumer Knaflic</p></li>
+      <li class="card"><img src="images/hands-on-machine-learning.webp" width="300" height="396" loading="lazy" decoding="async" alt=""><h3><cite>Hands-On Machine Learning with Scikit-Learn, Keras &amp; TensorFlow</cite></h3><p>Aurélien Géron</p></li>
+      <li class="card"><img src="images/python-crash-course.webp" width="288" height="382" loading="lazy" decoding="async" alt=""><h3><cite>Python Crash Course</cite></h3><p>Eric Matthes</p></li>
+    </ul>
+  </section>
+
+  <section class="section" id="anevrismes">
+    <p class="eyebrow">Sujet de stage M2 · CHU de Reims / CReSTIC</p>
+    <h2>Croissance des anévrismes cérébraux</h2>
+    <p class="lede wide">Étudier le lien entre l’évolution de la forme d’un anévrisme et les caractéristiques du flux sanguin mesurées en IRM 4D Flow.</p>
+     
+    <h3 class="stage-heading">Un même anévrisme observé à deux dates</h3>
+    <div class="cards aneurysm-example">
+      <figure class="card project-image">
+        <div class="vessel vessel-first" aria-hidden="true"></div>
+        <figcaption>IRM 1 · Date A</figcaption>
+      </figure>
+      <figure class="card project-image">
+        <div class="vessel" aria-hidden="true"></div>
+        <figcaption>IRM 2 · Date B</figcaption>
+      </figure>
+      <figure class="card project-image">
+        <div class="vessel vessel-overlay" aria-hidden="true"></div>
+        <figcaption>Comparaison 3D · Le contour pointillé indique la forme à la date A.</figcaption>
+      </figure>
+    </div>
+    <p class="lede wide">Après segmentation et recalage, la comparaison des surfaces indique où l’anévrisme a grandi. Les données IRM 4D Flow servent ensuite à rechercher des liens entre le flux sanguin et la croissance locale.</p>
+    
+
+
+
+    <h3 class="stage-heading">Les missions du stage</h3>
+    <dl class="entries">
+      <div><dt class="meta">Suivi longitudinal</dt><dd>Segmenter l’anévrisme sur des IRM morphologiques acquises à plusieurs dates, recaler les images et mesurer l’évolution de sa forme.</dd></div>
+      <div><dt class="meta">Croissance locale</dt><dd>Comparer les surfaces 3D avec la <i lang="en">Local Dissimilarity Map</i> pour repérer les régions qui évoluent.</dd></div>
+      <div><dt class="meta">Hémodynamique</dt><dd>Extraire et analyser les paramètres du flux sanguin à partir des IRM 4D Flow.</dd></div>
+      <div><dt class="meta">Visualisation</dt><dd>Contribuer à MRProject pour afficher les images et les marqueurs en 2D, 3D et 4D.</dd></div>
+    </dl>
+
+  </section>
+
+  <section class="section" id="objectif">
+    <p class="eyebrow">Objectif doctoral</p>
+    <h2>Apprendre, expérimenter, contribuer.</h2>
+    <p class="lede wide">Après le master, je souhaite poursuivre en doctorat en IA et Data Science pour travailler sur l’intelligence artificielle appliquée à l’imagerie médicale.</p>
+  </section>
+</main>
+</body>
+</html>
